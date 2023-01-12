@@ -1,0 +1,22 @@
+/*=========================================================================================
+    File Name: breadcrumbs-with-stats.js
+    Description: Breadcrumbs with statastics
+    ----------------------------------------------------------------------------------------
+    Item Name: Modern Admin - Clean Bootstrap 4 Dashboard HTML Template
+   Version: 3.0
+    Author: PIXINVENT
+    Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+(function(window, document, $) {
+	'use strict';
+    if($("#sp-bar-total-sales").lengh > 0){
+        $("#sp-bar-total-sales").sparkline([5,6,7,8,9,10,12,13,15,14,13,12,10,9,8,10,12,14,15,16,17,14,12,11,10,8], {
+            type: 'bar',
+            width: '100%',
+            height: '30px',
+            barWidth: 2,
+            barSpacing: 4,
+            barColor: '#00BCD4'
+        });
+    }
+})(window, document, jQuery);

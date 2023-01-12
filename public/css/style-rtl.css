@@ -1,0 +1,800 @@
+html, body
+{
+	font-family: 'Tajawal', sans-serif !important;
+}
+.row
+{
+/*	width: 100%;
+	display: block;
+	margin: 0 0px;*/
+}
+.header_top, .four_boxes_section, .cars_and_trucks
+{	
+	direction: rtl;
+}
+.header_top .language_change,.header_top .login_top{
+	    margin: 0;
+}
+.header_logo, .header_menu 
+{
+	float: right;
+}
+.header_menu .navbar-nav 
+{
+    padding: 0;
+    width: 100%;
+    float: right;
+    display: block;
+}
+.header_menu .navbar ul
+{
+	text-align: left;
+}
+.header_menu .navbar-nav .nav-item {
+    margin: 0 6px 0 0px;
+    float: none;
+    display: inline-block;
+}
+.header_login 
+{
+	float: left;
+	-ms-flex: 0 0 27.666667%;
+    flex: 0 0 27.666667%;
+    max-width: 27.666667%;
+}
+.header_menu {
+    -ms-flex: 0 0 55.666667%;
+    flex: 0 0 55.666667%;
+    max-width: 55.666667%;
+}
+.header_top .currency_change, .my_account_drop
+{
+	margin: 0 0 0 28px;
+    float: right;
+}
+.cart_top
+{
+	margin: 15px 0 0 0;
+    float: left;
+}
+.header_login  .dropdown-toggle::after
+{
+    float: left;
+    position: relative;
+    top: 20px;
+    margin: 0 5px 0 0;
+}
+.login_top img
+{
+	float: right;
+    margin: 10px 0 0 10px;
+}
+ .language_change img
+{
+	float: right;
+    margin: 5px 0 0 10px;
+}
+.header_search .top_search
+{
+	display: block;
+	float: right;
+}
+.header_search .search_input
+{
+	float: left;
+}
+.header_search .search_input input
+{
+	float: right;
+	text-align: right;
+	border-radius: 5px 0px 0px 5px;
+}
+.header_search .select_category .btn
+{
+	text-align: right;
+	border-radius: 0 5px 5px 0px;
+}
+.header_search .select_category .btn .fa
+{
+	float: right;
+	margin: 4px 0 0 10px;
+}
+.header_search .select_category .btn:after {
+    right: unset;
+    top: 18px;
+    left: 10px;
+}
+.header_search .search_input .search_btn
+{
+	float: left;
+	margin: 0;
+}
+.gmt_top h6
+{
+	display: flex;
+    direction: rtl;
+}
+.gmt_top h6 .first
+{
+	float: right;
+}
+.home_slider p a
+{
+    padding: 0 25px 0 5px;
+}
+.home_slider p a span {
+    float: right;
+}
+.home_slider p a img
+{
+    float: left;
+}
+.home_slider p a:hover img {
+    -webkit-transform: translateX(-4px);
+    transform: translateX(-4px);
+}
+
+.slider_view_more 
+{
+    float: left;
+}
+.slider_view_more a
+{
+	float: left;
+	padding: 0 25px 0 5px;
+}
+.section_heading
+{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.section_heading:after
+{
+	right: 0;
+}
+.section_heading span {
+    color: #e32123;
+    float: right;
+    margin: 0 0 0 10px;
+}
+.slider_view_more a span
+{
+	float: right;
+}
+.slider_view_more a img
+{
+	float: left;
+}
+.slider_view_more a:hover img {
+    -webkit-transform: translateX(-4px);
+    transform: translateX(-4px);
+}
+.slider .slick-prev
+{
+	left: unset;
+    right: -50px;
+}
+.slider .slick-next
+{
+	left: -50px;
+}
+.slider .slick-prev
+{
+    background: url(../images/right-arrow.png) !important;
+	background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+.slick-next
+{
+    background: url(../images/left-arrow.png) !important;
+	background-repeat: no-repeat !important;
+    background-position: center !important;
+ }
+ .slick-slider
+ {
+
+ }
+.d-flex
+{
+	display: block !important;
+}
+.four_boxes_section .box_area .box .img:before
+{
+	left: 0;
+    right: -9px;
+}
+.live_auction_slider .box_inner .content
+{
+	display: flex;
+}
+
+.live_auction_slider .box_inner .content .current_bid
+{
+	float: right;
+}
+.live_auction_slider .box_inner .content .time_remaining
+{
+	float: left;
+	text-align: left;
+}
+.live_hot_deal_slider .box_inner .content .current_bid 
+{
+    text-align: right;
+    float: right;
+}
+.live_hot_deal_slider .box_inner .content .time_remaining {
+    text-align: center;
+    float: right;
+}
+.live_hot_deal_slider .box_inner .content .buy_now {
+    text-align: left;
+    float: left;
+}
+.live_hot_deal_slider .box_inner .content 
+{
+    display: inline-block;
+    width: 100%;
+}
+.two_box_sections
+{
+	display: flex;
+}
+.two_box_sections .left
+{
+	float: right;
+}
+.two_box_sections .right
+{
+	float: left;
+}
+.two_box_sections .row
+{
+	margin: 0 -15px;
+    width: auto;
+}
+.populer_categories_section
+{
+	display: flex;
+}
+.populer_categories_section .first, .populer_categories_section .second
+{
+	float: right;
+}
+.populer_categories_section .third
+{
+	float: left;
+}
+.news_section
+{
+	display: flex;
+
+}
+.news_section .section_heading
+{
+	float: right;
+}
+.news_section .section_heading:after
+{	
+	margin: 34px 0 0 0;
+}
+.news_section .row
+{
+	width: 100%;
+	float: left;
+	margin: 0;
+}
+.new_slider .content h5 .fa
+{
+	margin: 0 0 0 5px;
+    float: right;
+}
+.footer_1
+{
+	float: right;
+}
+.footer_1 .social li 
+{
+    float: right;
+}
+.footer_1 .address_section li span
+{
+	right: 0;
+}
+.footer_1 .address_section li
+{
+	padding: 0 125px 0 0px;
+}
+.footer_1 .address, .footer_1 .phone, .footer_1 .email
+{
+	background-position: 100% 0;
+}
+.footer_1 .address_section li span {
+    right: 52px;
+    width: auto;
+}
+.footer_2
+{
+	float: none;
+    display: flex;
+    justify-content: flex-end;
+}
+.footer_main .row
+{
+	direction: rtl;
+}
+.footer_2 .half
+{
+	float: right;
+}
+.footer_3
+{
+	float: left;
+}
+.footer_2 .full form
+{
+	display: flex;
+}
+.footer_2 .full .input-group
+{
+	width: 100%;
+    display: block;
+   	padding: 2px 20px 2px 2px;
+}
+.footer_2 .full .input-group input
+{
+	float: right;
+    text-align: right;
+}
+.footer_2 .full .input-group span {
+    width: 30%;
+    float: left;
+}
+.footer_3 .recent_sold ul li
+{
+	float: right;
+}
+.side_bar_section
+{
+	float: right;
+}
+.category_right
+{
+	float: right;
+}
+.shop_by_category ul {
+	padding: 0 15px 0 0;
+    margin: 0;
+    width: 100%;
+    list-style: square;
+    color: #c3c3c5;
+    direction: rtl;
+    unicode-bidi: isolate;
+}
+.shop_by_category ul li a span
+{
+	float: left;
+}
+.price_filter input
+{
+	float: right;
+	margin: 0 0 0 9px;
+}
+.price_filter
+{
+	display: inline-block;
+}
+.price_filter .btn
+{
+	float: left;
+}
+.filter_section
+{
+	direction: rtl;
+	float: left;
+}
+.filter_all select, .sort_by select
+{
+	background-position: 5% 14px;
+}
+.sort_by
+{
+	margin: 0 15px 0 0;
+}
+.filter_all label, .sort_by label
+{
+    margin: 0 0 0 10px;
+}
+.category_right_content
+{
+	direction: rtl;
+}
+.category_right_content .box
+{
+	float: right;
+}
+.cars_and_trucks .row
+{
+	margin: 0 -15px;
+    width: auto;
+}
+.cars_and_trucks .row .box
+{
+	float: right;
+}
+.live_auction_slider .slick-slide, .live_hot_deal_slider .slick-slide
+{
+	direction: rtl;
+}
+.category_right .d-flex
+{
+	display: flex !important; 
+}
+.category_list_content .list
+{
+	float: left;
+	width: 100%;
+    direction: rtl;
+}
+.category_list_content .list .img
+{
+	float: right;
+}
+.category_list_content .list .text
+{
+	float: right;
+}
+.category_list_content .list h2 .online
+{
+	float: right;
+	margin: 0 0 0 15px;
+}
+.category_list_content .list h2 .cat
+{
+	float: left;
+}
+.category_list_content .current_bid
+{
+	float: right;
+}
+.category_list_content .button_area a
+{
+	margin: 0 0 0 10px;
+}
+.singl_prod_main .row
+{
+	display: flex;
+    direction: rtl;
+}
+.single_prod_content h2 .cat
+{
+	float: left;
+}
+.single_prod_sidebar .current_price .form-group input
+{
+	float: right;
+	border-radius: 0 50px 50px 0px;
+}
+.single_prod_sidebar .current_price .form-group button
+{
+	border-radius: 50px 0 0px 50px;
+}
+.single_prod_sidebar .current_price .buy_now
+{
+	float: right;
+	padding: 0 0 0 10px;
+}
+.single_prod_sidebar .current_price .best_offer
+{
+    padding: 0 10px 0 0;
+}
+.single_prod_sidebar .additional_doc h3
+{
+	text-align: right;
+}
+.single_prod_sidebar .additional_doc ul li
+{
+	text-align: right;
+}
+.single_prod_content .condition_bar h3 span
+{
+	display: inline-block;
+}
+.breadcrumb
+{
+	direction: rtl;
+}
+.fa-angle-double-right:before {
+    content: "\f100";
+}
+.single_prod_content .condition_bar .bid span
+{
+	right: unset;
+    left: 32px;
+}
+.product_slider
+{
+	direction: ltr;
+}
+.product_slider .slick-nex
+{
+	left: 25px;
+}
+.product_slider .slick-prev{
+	right: 25px;
+}
+.product__slider-thmb .slick-track
+{
+	float: right;
+}
+.single_prod_content .payment_option p .title {
+    left: unset;
+    font-weight: 600;
+    right: 15px;
+}
+.single_prod_content .payment_option h6 span
+{
+	font-weight: 600;
+}
+.single_prod_content .payment_option p
+{
+	padding: 0 75px 0 0;
+}
+.single_prod_content .payment_option p a
+{
+	display: inline-block;
+}
+.single_prod_content .ques_ans .panel h4 .collapsed
+{
+	background-position: 0% 20px;
+}
+.single_prod_content .ques_ans .panel h4 .accordion-toggle
+{
+	background-position: 0% 20px;
+}
+.single_prod_content .ques_ans .panel h4 a
+{
+	padding: 20px 0px 20px 60px;
+}
+.dropdown-menu.show
+{
+	right: 0;
+}
+.product_slider .slick-next
+{
+    left: 20px !important;
+}
+.dropdown-item
+{
+	float: left;
+}
+.language_change .dropdown-item img {
+    margin: 0 0 0 10px;
+}
+.contect_content
+{
+	direction: rtl;
+}
+.contect_content .left_content {
+    padding: 20px 0 0 30px;
+    border-right: 0px solid #e2e2e2;
+    border-left: 3px solid #e2e2e2;
+}
+.contect_content .left_content h6 span
+{
+	left: unset;
+	right: 0;
+}
+.contect_content .left_content h6
+{
+	padding: 0 30px  0 0;
+}
+.contect_content .left_content #send_msg p
+{
+	text-align: left;
+}
+.contect_content .left_content #send_msg .close
+{
+	right: unset;
+    left: 15px;
+}
+.account_content
+{
+	direction: rtl;
+}
+.breadcrumb li
+{
+	margin: 5px 0 5px 10px;
+}
+.account_content .left_content {
+    padding: 0 0 0 20px;
+}
+.account_content .right_content
+{
+	padding: 0 45px 0 0;
+	border-right: 2px solid #d6d6d6;
+	border-left: 0px solid #d6d6d6;
+}
+.account_content .right_content .right_box .box ul li
+{
+	background-position: 100% 6px !important;
+    padding: 0 20px 0 0;
+    background: url(../images/front/lang/ar/sign-up-arrow.png);
+    background-repeat: no-repeat;
+}
+.single_prod_content h2:after
+{
+    margin: 9px 0 0 0;
+}
+.dropdown-menu.show
+{
+	right: auto;
+}
+.footer_2 ul
+{
+	float: none;
+	margin: 0 30px 0 0px;
+    min-width: 150px;
+}
+.footer_5 .input-group
+{
+	padding: 2px 20px 2px 2px;
+}
+.footer_6 ul li
+{
+	float: right;
+}
+.my_account_watching .side_bar_section .box ul li .dropdown-toggle::after,
+.my_account_watching .side_bar_section .box ul .show .dropdown-toggle:after
+{
+	left: 0;
+    right: unset;
+}
+.my_account_watching .side_bar_section .box ul
+{
+	direction: rtl;
+	padding: 0 15px 0 0;
+}
+.buyer_dashborad_section .content_right .ac_detail .box_inner .left p
+{
+	direction: rtl;
+}
+.edit_profile_right form .form-group
+{
+	direction: rtl;
+}
+.my_account_watching .row
+{
+	direction: rtl;
+}
+.buyer_dashborad_section .row
+{
+	direction: rtl;
+}
+.buyer_dashborad_section .side_bar_section .box ul
+{
+	padding: 0 15px 0 0;
+}
+.buyer_dashborad_section .side_bar_section .box ul li .dropdown-toggle:after,
+.buyer_dashborad_section .side_bar_section .box ul .show .dropdown-toggle:after
+{
+	left: 0;
+	right: unset;
+}
+.fa-chevron-left:before
+{
+	content: "\f054";
+}
+.fa-chevron-right:before {
+    content: "\f053";
+}
+.watching_right .list .close
+{
+	left: 15px;
+	right: unset;
+}
+.watching_right .time_remaining, .watching_right .current_bid
+{
+	float: right;
+}
+.watching_right .win_lost .red,
+.watching_right .win_lost .green
+{
+	float: left;
+}
+.watching_right .list h2 .cat
+{
+	margin: 0;
+}
+.watching_right .button_area
+{
+	text-align: left;
+}
+.won_listing .qty, .won_listing .max_bid
+{
+	float: right;
+}
+.watching_listing .button_area .check_out_btn
+{
+	margin: 0 10px 0 0px !important;
+	float: left;
+}
+.watching_right .win_lost
+{
+	text-align: left;
+}
+.gmt_top h6 .second
+{
+	font-size: 13px;
+	width: 75% !important;
+}
+.category_list_content .list h2:after
+{
+	margin: 39px 0 0 0;
+}
+.table thead th, .table td, .table th
+{
+	text-align: right !important;
+}
+.won_bid_popup .close
+{
+	right: unset;
+	left: 25px;
+}
+.won_bid_popup .modal-body h6
+{
+	text-align: left;
+}
+.won_bid_popup .section_heading:after
+{
+	margin: 34px 0 0 0;
+}
+.my_account_watching .invoice_detail_section .section_heading:after
+{
+	margin: 34px 0 0 0 !important;
+}
+.my_account_watching .back_button_area .back_btn_black .fa {
+    margin: 0 0px 0 10px;
+}
+.buyer_dashborad_section  .section_heading:after
+{
+	margin: 34px 0 0 0;
+}
+/* started by PM */
+.cus_f
+{
+   float:right;
+}
+.l_file {
+    float: right;
+    border-radius: 0 50px 50px 0;
+}
+.current_price .success_msg
+{
+	float: right;
+}
+.help-block-error
+{
+	float:right;
+}
+.f_list
+{
+	float:right;
+}
+.d_list
+{
+	margin-left: 10px;
+}
+/* ended by PM */
+
+
+.pay_detail_doc p .left
+{
+    line-height: 45px;
+    width: 145px !important;
+}
+.pay_detail_doc p .right
+{
+    width: auto !important;
+}

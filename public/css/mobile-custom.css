@@ -1,0 +1,174 @@
+.shop_by_category .custom-control-label::after
+{
+    display: none !important;
+}
+#submit_bid_amt-error
+{
+    width: 100%;
+    float: left;
+    font-size: 14px;
+    color: red;
+    font-weight: 600;
+    padding: 0 0 0 15px;
+}
+.error{
+    color: red;
+    font-weight: 600;
+}
+.success_msg
+{
+    color: green;
+    /*font-weight: 500;*/
+    font-size: 15px;
+    padding-left: 12px;
+    font-weight: 600;
+}
+.object-custom-menu li.has-mega-menu .object-submenu .active a span
+{
+    color: #e32123 !important;
+}
+.object-custom-menu .active a span
+{
+    color: #e32123 !important;
+}
+#address_form .form-control-position
+{
+    width: 120px;
+}
+.mx-auto
+{
+    max-width: 100%;
+}
+.single_news_section
+{
+    margin: 0 0 40px 0; 
+}
+.single_news_section .section_heading
+{
+    width: 100%;
+}
+
+/****edit profile***/
+.edit_profile_section .identify_file {
+    /* display: inline-block !important; */
+    padding: 10px 31px 0px 31px;
+    cursor: pointer;
+    background-color: #ffffff;
+    font-size: 16px !important;
+    float: left;
+    /*width: 100% !important;*/
+    border: 1px solid #2a2a2a;
+    height: 45px;
+    outline: none;
+    font-family: 'Bebas-Regular';
+    line-height: 25px !important;
+    width: 63%;
+}
+.edit_profile_section  .cus_identify_file {
+    float: left;
+    position: relative;
+}
+.edit_profile_section  .add_more {
+    /*width: 180px !important;*/
+    color: #fff !important;
+    background: #000000  !important;
+    display: inline-block;
+    font-family: 'Bebas-Regular'; 
+    font-size: 18px;
+    border-radius: 100px;
+    height: 45px;
+    /*line-height: 42px;*/
+    transition: all 0.5s;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 !important;
+    padding:9px;
+}
+
+.edit_profile_section .add_more i{
+    color: #fff !important;
+}
+.edit_profile_section .download_identity_file i{
+    color: #fff !important;
+}
+
+.edit_profile_section .delete_file{
+    line-height: 50px;
+    font-size: 20px;
+    font-style: normal;
+    color: red;
+    text-align: center;
+}
+/****edit profile***/
+.sign_up .form-group .identify_file {
+    display: inline-block;
+    padding: 10px 31px 0px 31px;
+    cursor: pointer;
+    background-color: #ffffff;
+    font-size: 16px;
+    float: left;
+    width: 100%;
+    border: 1px solid #2a2a2a;
+    height: 45px;
+    outline: none;
+    font-family: 'Bebas-Regular';
+}
+.sign_up .form-group .cus_identify_file {
+    float: left;
+    position: relative;
+    margin-right: 25px;
+    width: 216px;
+    text-align: center;
+}
+.sign_up  .add_more {
+    /*width: 180px;*/
+    color: #fff !important;
+    background: #000000  !important;
+    display: inline-block;
+    font-family: 'Bebas-Regular';
+    font-size: 18px;
+    border-radius: 100px;
+    height: 45px;
+    /*line-height: 42px;*/
+    transition: all 0.5s;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 !important;
+    padding: 9px;
+}
+
+.sign_up .add_more i{
+    color: #fff !important;
+}
+
+.sign_up .delete_file{
+    line-height: 50px;
+    font-size: 20px;
+    font-style: normal;
+    color: red;
+    text-align: center;
+}
+
+.pay_detail_doc p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #2a2a2a;
+    margin: 0 0 20px 0;
+    display: flex;
+}
+.pay_detail_doc p .left {
+    width: 200px;
+    display: inline-block;
+}
+.pay_detail_doc p .center {
+    width: 60px;
+    color: #999999;
+    text-align: center;
+    padding: 0 0 0 0;
+}
+.pay_detail_doc p .right {
+    width: 100%;
+}
+
