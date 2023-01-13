@@ -191,6 +191,8 @@ class OrderController extends Controller
                     echo ">> ".date_convertDBDateFormat($data['order_date']); exit;
 
                     $clientContactPerson = ClientContactPerson::getClientContactPersonDataFromId($data['client_contact_person_id']);
+                    
+                    $paymentTerms = PaymentTerms::getPaymentTermsDataFromId($data['order_payment_due_days']);
 
                     $insert_array = array(
                         'user_id'       => $data['user_id'],
