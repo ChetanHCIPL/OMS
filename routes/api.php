@@ -211,6 +211,7 @@ Route::group(['prefix' => strtolower($versionV1)], function() use($versionV1){
 
     ## Order's APIs Endpoint
     Route::post('get-order-list', "API\\$versionV1\Order\OrderController@getAllOrders"); 
+    Route::post('add-order-data', "API\\$versionV1\Order\OrderController@addOrderData"); 
 
     Route::post('get-client-addresses', "API\\$versionV1\Client\ClientController@getClientAddressesByClientId"); 
     Route::post('get-client-contacts', "API\\$versionV1\Client\ClientController@getClientContactsByClientId"); 

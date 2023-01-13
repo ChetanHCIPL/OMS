@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
 use App\Traits\General\ApiFunction; 
+use App\Traits\Order\Order;
 use Exception;
 use Hash;
 use Config;
@@ -15,7 +16,7 @@ use App\Models\OrderStatus;
 
 class OrderController extends Controller
 {
-	use ApiFunction;
+    use ApiFunction, Order;
 
     public function __construct(){
         
@@ -170,11 +171,13 @@ class OrderController extends Controller
         $event_data_array = array();
         $data = $where_arr = array();
         try{
-            $post = $request->all();
-            $user_id = (isset($post['user_id']) && $post['user_id'] != "" ? $post['user_id'] : 0);
+            $data = $request->all();
+            $user_id = (isset($data['user_id']) && $data['user_id'] != "" ? $data['user_id'] : 0);
+
+            //echo "<pre>"; print_r($data); exit;
 
             // Validate Request Object for Processed Further
-            $validator = $this->validateClientAdd($request->all());
+            $validator = $this->validateOrderAdd($request->all());
             if($validator->fails()){
                 ## Handle Exception
                 $this->setStatusCode(Response::HTTP_UNPROCESSABLE_ENTITY);
@@ -182,41 +185,55 @@ class OrderController extends Controller
                 $message = $validator_message;           
             }else{
                 ## Insert Recored
-                $data=$post;
                 if(!empty($user_id)){
 
-                    $insert_client = array();
-                    $insert_client['client_code'] = 0;
-                    $insert_client['client_name']       = $data['client_name'] ? $data['client_name'] : '';
-                    $insert_client['mobile_number']     = $data['mobile_number'] ? $data['mobile_number'] : '';
-                    $insert_client['whatsapp_number']   = $data['whatsapp_number'] ? $data['whatsapp_number'] : '';
-                    $insert_client['email']     = $data['email'] ? $data['email'] : '';
-                    $insert_client['sales_user_id']     = $user_id ? $user_id : '';
-                    $insert_client['client_type']       = $data['type'] ? $data['type'] : '';
-                    $insert_client['gst_no']       = $data['gst_no'] ? $data['gst_no'] : '';
-                    $insert_client['pan_no']       = $data['pan_no'] ? $data['pan_no'] : '';
-                    $insert_client['country_id']   = 1;
-                    $insert_client['state_id']     = $data['state_id'] ? $data['state_id'] : '';
-                    $insert_client['district_id']  = $data['district_id'] ? $data['district_id'] : '';
-                    $insert_client['taluka_id']    = $data['taluka_id'] ? $data['taluka_id'] : '';
-                    $insert_client['taluka_id']    = $data['taluka_id'] ? $data['taluka_id'] : '';
-                    $insert_client['zip_code']     = $data['zip_code'] ? $data['zip_code'] : '';
-                    $insert_client['created_by']   = $user_id;
+                    echo ">> ".date_convertDBDateFormat($data['order_date']); exit;
 
-                    // Insert Client in Respected Table
-                    $insert = Clients::addClients($insert_client);
+                    $insert_array = array(
+                        'user_id'       => $data['user_id'],
+                        'user_type'     => $data['user_type'], 
+                        'parrent_id'    => $data['parrent_id'], 
+                        'order_date'    => date_convertDBDateFormat($data['order_date']),
+                        'order_expected_dispatched_date'    => $data['dispatch_date'], 
+                        'order_total'  => $data['order_total'],
+                        'order_subtotal' => $data['sub_total_value'], 
+                        'order_discount' => $data['dis_total_value'],
+                        'transport_id' => $data['transporter'],
+                        'order_payment_due_days' => $paymentTerms[0] ? $paymentTerms[0]['due_type_value'] : '', 
+                        'order_payment_due_date' => $data['due_date'], 
+                        'order_remark' => $data['order_remark'], 
+                        'client_contact_person_id' => $data['client_address_id'],
+                        'order_responsible_person_name' => $clientContactPerson[0] ? $clientContactPerson[0]['full_name'] : '',
+                        'order_responsible_person_number' => $clientContactPerson[0] ? $clientContactPerson[0]['mobile_number'] : '',
+                        'client_id' => $data['client_id'],
+                        'client_name' => $clientData[0] ? $clientData[0]['client_name'] : '',
+                        'client_number' => $clientData[0] ? $clientData[0]['mobile_number'] : '',
+                        'sales_user_id' => $data['sales_user_id'], 
+                        'status' => 1,
+                        'billing_address_id' => $data['client_address_id'], 
+                        'billing_address_name' => $bill_address['title'],
+                        'billing_address' => $bill_address['address'],
+                        'shipping_address_id' => $data['client_ship_address_id'],
+                        'shipping_address_name' => $ship_address['address'],
+                        'shipping_address' => $ship_address['title'],
+                        'order_form_photo' => $file,
+                        'created_by' => Auth::guard('admin')->user()->id
+                    );
 
-                    // Get Client Type
+                    // Insert Order in Respected Table
+                    $insert = Orders::addOrders($insert_array);
+
+                    // Get Order Type
                     $client_type=ClientType::getClientDataList();
 
-                    // Initialize Client Prefix
+                    // Initialize Order Prefix
                     $client_code_prefix=[];
 
                     foreach($client_type as $d1){
                         $client_code_prefix[$d1['id']]=strtoupper(substr($d1['name'], 0, 2));
                     }
 
-                    // Update Client Code With Unique Identifier
+                    // Update Order Code With Unique Identifier
                     Clients::updateClientCode($insert['id'], $client_code_prefix[$data['type']]);            
                     if($insert){
                         $this->setStatusCode(Response::HTTP_OK);

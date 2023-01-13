@@ -830,19 +830,20 @@ class SalesUserController extends AbstractController{
                 'area' => (isset($data['area']) ? $data['area'] : "0"),
                 'remark' => (isset($data['remark']) ? $data['remark'] : ""),
             );
-            if(isset($data['sales_structure_id'])){/*
+            //echo "<pre>"; print_r($data);exit();
+            if(isset($data['sales_structure_id'])){
                 // insert for relationship
-                $insertRelationnship=array('user_id'=>$insert['id'],'rsm_id'=>0,'zsm_id'=>0,'dy_zsm_id'=>0,'asm_id'=>0,'sales_structure_id'=>$data['sales_structure_id'],'created_at'=>date('Y-m-d H:i:s'));
+                $insertRelationnship=array('user_id'=>$id,'rsm_id'=>0,'zsm_id'=>0,'dy_zsm_id'=>0,'asm_id'=>0,'sales_structure_id'=>$data['sales_structure_id'],'created_at'=>date('Y-m-d H:i:s'));
                 // only for RSM
-                UserSalesState::deleteUserState($insert['id']);
-                UserSalesStateZone::deleteUserStateZone($insert['id']);
-                UserSalesStateZoneDistricts::deleteUserStateZoneDistricts($insert['id']);
-                UserSalesStateZoneDistrictsTaluka::deleteUserStateZoneDistrictsTaluka($insert['id']);
-                SalesUserRelationship::sRelationship($insert['id']);
+                UserSalesState::deleteUserState($id);
+                UserSalesStateZone::deleteUserStateZone($id);
+                UserSalesStateZoneDistricts::deleteUserStateZoneDistricts($id);
+                UserSalesStateZoneDistrictsTaluka::deleteUserStateZoneDistrictsTaluka($id);
+                SalesUserRelationship::sRelationship($id);
                 if($data['sales_structure_id']==1){
                     if(!empty($data['sales_state_id'])){
                         foreach($data['sales_state_id'] as $val){
-                            $insertArray=array('user_id'=>$insert['id'],'state_id'=>$val,'created_at'=>date('Y-m-d H:i:s'));
+                            $insertArray=array('user_id'=>$id,'state_id'=>$val,'created_at'=>date('Y-m-d H:i:s'));
                             (UserSalesState::addUserSalesState($insertArray));
                         }
                     }
@@ -852,10 +853,10 @@ class SalesUserController extends AbstractController{
                         $userdata=UserSalesStateZone::UserSalesStateZoneByUserID($data['user_type_zsm']);
                         $data['user_type_rsm_zone']=$userdata[0]['zone_id'];
                     }
-                    $insertArray=array('user_id'=>$insert['id'],'state_id'=>$data['user_type_rsm_state'],'created_at'=>date('Y-m-d H:i:s'));
+                    $insertArray=array('user_id'=>$id,'state_id'=>$data['user_type_rsm_state'],'created_at'=>date('Y-m-d H:i:s'));
                     UserSalesState::addUserSalesState($insertArray);
                     // only for ZSM
-                    $insertArray=array('user_id'=>$insert['id'],'state_id'=>$data['user_type_rsm_state'],'zone_id'=>$data['user_type_rsm_zone'],'created_at'=>date('Y-m-d H:i:s'));
+                    $insertArray=array('user_id'=>$id,'state_id'=>$data['user_type_rsm_state'],'zone_id'=>$data['user_type_rsm_zone'],'created_at'=>date('Y-m-d H:i:s'));
                     UserSalesStateZone::addUserSalesStateZone($insertArray);
                     if(!empty($data['user_type_rsm'])){
                         $insertRelationnship['rsm_id']=$data['user_type_rsm'];
@@ -872,18 +873,18 @@ class SalesUserController extends AbstractController{
                     if($data['sales_structure_id']==3 || $data['sales_structure_id']==4){
                         if(!empty($data['user_type_zsm_district'])){
                             foreach($data['user_type_zsm_district'] as $val){
-                                $insertArray=array('user_id'=>$insert['id'],'state_id'=>$data['user_type_rsm_state'],'zone_id'=>$data['user_type_rsm_zone'],'district_id'=>$val,'created_at'=>date('Y-m-d H:i:s'));
+                                $insertArray=array('user_id'=>$id,'state_id'=>$data['user_type_rsm_state'],'zone_id'=>$data['user_type_rsm_zone'],'district_id'=>$val,'created_at'=>date('Y-m-d H:i:s'));
                                 UserSalesStateZoneDistricts::addUserSalesStateZoneDistricts($insertArray);
                             }
                         }
                     }
                     if($data['sales_structure_id']==5){
-                        $insertArray=array('user_id'=>$insert['id'],'state_id'=>$data['user_type_rsm_state'],'zone_id'=>$data['user_type_rsm_zone'],'taluka_id'=>$data['user_type_aso_asm_taluka'],'district_id'=>$data['user_type_aso_asm_taluka'],'created_at'=>date('Y-m-d H:i:s'));
+                        $insertArray=array('user_id'=>$id,'state_id'=>$data['user_type_rsm_state'],'zone_id'=>$data['user_type_rsm_zone'],'taluka_id'=>$data['user_type_aso_asm_taluka'],'district_id'=>$data['user_type_aso_asm_taluka'],'created_at'=>date('Y-m-d H:i:s'));
                         UserSalesStateZoneDistrictsTaluka::addUserSalesStateZoneDistrictsTaluka($insertArray);
                     }
                 }
                 // insert for relationship
-                SalesUserRelationship::addSalesUsersRelationship($insertRelationnship);*/
+                SalesUserRelationship::addSalesUsersRelationship($insertRelationnship);
             }
         if(isset($data['changePasswordChk']) && $data['changePasswordChk'] =='1'){
             if(isset($data['password']) && $data['password'] != ''){ 

@@ -1395,7 +1395,7 @@ table a.fancybox img {
   padding: 0 20px !important;
 }
 .table tbody td{
-  padding:4px 6px;
+  padding:10px 20px;
 }
 .table-fixed tbody {
   max-height: 210px;

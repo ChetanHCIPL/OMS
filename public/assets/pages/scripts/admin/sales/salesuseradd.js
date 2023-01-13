@@ -215,7 +215,7 @@ $(document).ready(function() {
       $('#user_type_rsm_state').change(function(){
           getZoneListState();
           getDistrictsListState();
-          // getRSMUserlist();
+          getRSMUserlist();
       })
       $('#user_type_zsm').change(function(){
         getDistrictsListState();

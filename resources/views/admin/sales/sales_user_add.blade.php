@@ -295,21 +295,7 @@ $checked_mobile_email_auth = ''; @endphp
                                        <div class="col-xl-5 col-12">
                                           <div class="sales_structure">
 
-                                                <div class="form-group row mx-auto {{ (!($mode=='Update' && $userData['sales_structure_id']>=2))? 'd-none':''}}" id="div_rsm" >
-                                                      <label class="col-md-3 label-control">RSM&nbsp;<span class="required">*</span></label>
-                                                      <div class="col-md-9">
-                                                         <select  id="user_type_rsm" class="access_control" name="user_type_rsm" >
-                                                            <option value="">Select RSM</option>
-                                                            @if(!empty($RSMusers))
-                                                               @foreach($RSMusers as $v)
-                                                                <option value="{{$v['id']}}" {{(!empty($zsmdata[0]['rsm_id']) && $zsmdata[0]['rsm_id']==$v['id'])? 'selected':''}}>{{$v['first_name']}} {{$v['last_name']}}</option>
-                                                               @endforeach
-                                                            @endif
-                                                         </select>
-                                                      </div>
-                                                   </div>
-                                                   
-                                                   <div class="form-group row mx-auto {{ (!($mode=='Update' && $userData['sales_structure_id']==1))? 'd-none':''}}" id="div_sales_state">
+                                                <div class="form-group row mx-auto {{ (!($mode=='Update' && $userData['sales_structure_id']==1))? 'd-none':''}}" id="div_sales_state">
                                                       <label class="col-md-3 label-control">State&nbsp;<span class="required">*</span></label>
                                                       <div class="col-md-9">
                                                          <select  id="sales_state_id" class="access_control" multiple  name="sales_state_id[]" placeholder="Select State" data-placeholder="Select State">
@@ -340,6 +326,22 @@ $checked_mobile_email_auth = ''; @endphp
                                                          
                                                       </div>
                                                    </div>
+                                                   
+                                                <div class="form-group row mx-auto {{ (!($mode=='Update' && $userData['sales_structure_id']>=2))? 'd-none':''}}" id="div_rsm" >
+                                                      <label class="col-md-3 label-control">RSM&nbsp;<span class="required">*</span></label>
+                                                      <div class="col-md-9">
+                                                         <select  id="user_type_rsm" class="access_control" name="user_type_rsm" >
+                                                            <option value="">Select RSM</option>
+                                                            @if(!empty($RSMusers))
+                                                               @foreach($RSMusers as $v)
+                                                                <option value="{{$v['id']}}" {{(!empty($zsmdata[0]['rsm_id']) && $zsmdata[0]['rsm_id']==$v['id'])? 'selected':''}}>{{$v['first_name']}} {{$v['last_name']}}</option>
+                                                               @endforeach
+                                                            @endif
+                                                         </select>
+                                                      </div>
+                                                   </div>
+                                                   
+                                                   
 
                                                    
 
