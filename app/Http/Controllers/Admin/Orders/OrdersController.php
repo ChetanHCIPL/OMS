@@ -785,7 +785,7 @@ class OrdersController extends AbstractController
             'order_payment_due_days' => $paymentTerms[0] ? $paymentTerms[0]['due_type_value'] : '', 
             'order_payment_due_date' => $data['due_date'], 
             'order_remark' => $data['order_remark'], 
-            'client_contact_person_id' => $data['client_address_id'],
+            'client_contact_person_id' => $data['client_contact_id'],
             'order_responsible_person_name' => $clientContactPerson[0] ? $clientContactPerson[0]['full_name'] : '',
             'order_responsible_person_number' => $clientContactPerson[0] ? $clientContactPerson[0]['mobile_number'] : '',
             'client_id' => $data['client_id'],

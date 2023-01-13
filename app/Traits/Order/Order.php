@@ -31,7 +31,7 @@ trait Order
     private function addOrderValidateRules($data){
         return [
             'client_id'=>'required',
-            'client_address_id' => 'required',
+            'billing_address_id' => 'required',
             'client_contact_id' => 'required',
             'client_ship_address_id' => 'required',
             'sales_user_id' => 'required',
@@ -53,7 +53,7 @@ trait Order
     private function OrderAddMessages($data = array()){
         return [
             'client_id.required' => sprintf(Config::get('messages.validation_msg.required_field'), 'Client '),
-            'client_address_id.required' => sprintf(Config::get('messages.validation_msg.required_field'), 'Client Address'),
+            'billing_address_id.required' => sprintf(Config::get('messages.validation_msg.required_field'), 'Client Address'),
             'client_contact_id.required' => sprintf(Config::get('messages.validation_msg.required_field'), 'Client Contact '),
             'client_ship_address_id.required' => sprintf(Config::get('messages.validation_msg.required_field'), 'Client Shipment Address'),
             'sales_user_id.required' => sprintf(Config::get('messages.validation_msg.required_field'), 'Sales User'),

@@ -14,7 +14,7 @@ $('#datatable_list').DataTable({
         {"orderable": true, "class": "text-center"},
         {"orderable": false, "class": "text-center"}
     ],
-	"order": [[ 1, "asc" ]],	
+	"order": [[ 3, "asc" ]],	
 	columnDefs: [{
         orderable: false,
         targets:   0

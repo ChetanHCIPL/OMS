@@ -61,7 +61,7 @@ class DocumentsController extends Controller {
 
         $sorton = (isset($post['order'][0]['column']) ? $post['order'][0]['column'] : "");
         $sortdir = (isset($post['order'][0]['dir']) ? $post['order'][0]['dir'] : 'ASC');
-
+       
         if (isset($sorton) && $sorton != "") {
             switch ($sorton) {
                 case "1":
@@ -77,7 +77,7 @@ class DocumentsController extends Controller {
                     $sort = "title";
             }
         } else {
-            $sort = "title";
+            $sort = "display_order";
         }
         $data = Document::getDocumentData($iDisplayLength, $iDisplayStart, $sort, $sortdir, $search, $search_arr)->toArray();
         $cnt = count($data);
