@@ -13,6 +13,7 @@ use Config;
 use DB;
 use App\Models\Orders;
 use App\Models\OrderStatus;
+use App\Models\ClientContactPerson;
 
 class OrderController extends Controller
 {
@@ -189,6 +190,8 @@ class OrderController extends Controller
 
                     echo ">> ".date_convertDBDateFormat($data['order_date']); exit;
 
+                    $clientContactPerson = ClientContactPerson::getClientContactPersonDataFromId($data['client_contact_person_id']);
+
                     $insert_array = array(
                         'user_id'       => $data['user_id'],
                         'user_type'     => $data['user_type'], 
@@ -202,7 +205,7 @@ class OrderController extends Controller
                         'order_payment_due_days' => $paymentTerms[0] ? $paymentTerms[0]['due_type_value'] : '', 
                         'order_payment_due_date' => $data['due_date'], 
                         'order_remark' => $data['order_remark'], 
-                        'client_contact_person_id' => $data['client_address_id'],
+                        'client_contact_person_id' => $data['client_contact_person_id'],
                         'order_responsible_person_name' => $clientContactPerson[0] ? $clientContactPerson[0]['full_name'] : '',
                         'order_responsible_person_number' => $clientContactPerson[0] ? $clientContactPerson[0]['mobile_number'] : '',
                         'client_id' => $data['client_id'],
